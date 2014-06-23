@@ -1,0 +1,14 @@
+---
+vms:
+- name: master
+  box: centosPupLabs
+  roles:
+  - pe-puppet-master
+- name: firstagent
+  box: centosPupLabs
+  roles:
+  - pe-puppet-agent
+- name: secondagent
+  box: centosPupLabs
+  roles:
+  - pe-puppet-agent
