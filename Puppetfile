@@ -13,4 +13,4 @@ mod "zack/r10k"
 mod "thias/vsftpd"
 
 mod "antelope",
-    :git => 'git@github.com:UCSD-ANF/puppet-antelope.git'
+    :git => 'https://github.com/UCSD-ANF/puppet-antelope.git'
