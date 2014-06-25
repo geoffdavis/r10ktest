@@ -1,14 +1,14 @@
 ---
 vms:
 - name: master
-  box: centosPupLabs
+  box: 'centos-64-x64-vbox4210-nocm'
   roles:
   - pe-puppet-master
 - name: firstagent
-  box: centosPupLabs
+  box: 'centos-64-x64-vbox4210-nocm'
   roles:
   - pe-puppet-agent
 - name: secondagent
-  box: centosPupLabs
+  box: 'debian-73-x64-virtualbox-nocm'
   roles:
   - pe-puppet-agent
