@@ -12,6 +12,7 @@ roles:
         type: hosts
       - type: shell
         inline: |-
+          iptables -I INPUT 4 -p tcp --syn --dport 443 -j ACCEPT
           iptables -I INPUT 4 -p tcp --syn --dport 8140 -j ACCEPT
           iptables -I INPUT 4 -p tcp --syn --dport 61613 -j ACCEPT
       -
