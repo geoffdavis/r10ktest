@@ -8,8 +8,15 @@ roles:
       customize:
         - [modifyvm, !ruby/sym id, '--memory', 1024]
     provisioners:
-      - {type: hosts}
-      - {type: pe_bootstrap, role: !ruby/sym master}
+      -
+        type: hosts
+      - type: shell
+        inline: |-
+          iptables -I INPUT 4 -p tcp --syn --dport 8140 -j ACCEPT
+          iptables -I INPUT 4 -p tcp --syn --dport 61613 -j ACCEPT
+      -
+        type: pe_bootstrap
+        role: !ruby/sym master
 
   pe-puppet-agent:
     private_networks:
