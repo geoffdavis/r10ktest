@@ -18,6 +18,16 @@ roles:
       -
         type: pe_bootstrap
         role: !ruby/sym master
+      -
+        type: shell
+        inline: |-
+           [ -e /etc/profile.d/usrlocal.sh ] || \
+              cp /vagrant/files/el6/usrlocal.sh /etc/profile.d/
+           cd /etc/puppetlabs/puppet/modules
+           /usr/local/bin/puppet module install zack-r10k
+      -
+        type: puppet
+        manifest_file: r10k_installation.pp
 
   pe-puppet-agent:
     private_networks:
