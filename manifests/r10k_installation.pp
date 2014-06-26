@@ -1,6 +1,6 @@
 class { 'r10k':
-  version       => '1.2.1',
-  sources       => {
+  version           => '1.2.1',
+  sources           => {
     'puppet'    => {
       'remote'  => 'https://github.com/geoffdavis/r10ktest.git',
       'basedir' => "${::settings::confdir}/environments",
